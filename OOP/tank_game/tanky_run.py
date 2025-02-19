@@ -1,7 +1,7 @@
 import tkinter as tk
 import random
 
-# Initialize the main window
+# 1Initialize the main window
 window = tk.Tk()
 window.title("Tank War")
 window.geometry('800x600')
