@@ -1,6 +1,4 @@
 from datetime import datetime, timedelta
-# As Mantas
-
 class Driver:
     def __init__(self, name, license_category, holiday_start, holiday_end, price_km):
         self.name = name
