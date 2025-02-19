@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-# Labas
+# Labas vakaras Lietuva
 
 class Driver:
     def __init__(self, name, license_category, holiday_start, holiday_end, price_km):
