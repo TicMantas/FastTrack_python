@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
-# As Mantas
-
+from math import ceil
 class Driver:
     def __init__(self, name, license_category, holiday_start, holiday_end, price_km):
         self.name = name
@@ -42,11 +41,11 @@ class Car:
 
     def need_mot_check_or_insurance(self):
         if datetime.now() - self.insurance_date > timedelta(days=365):
-            print('Need insurance')
+            return True
         elif datetime.now() - self.mot_check_data > timedelta(days=365):
-            print('Need MOT check')
+            return True
         else:
-            print('No need car can drive')
+            return False
 
     def count_price(self, distance, fuel_price):
         fuel_consumption = (self.fuel_consumption_100km / 100) * distance * fuel_price
@@ -60,7 +59,7 @@ class Bus(Car):
         self.seats = seats
 
     def driveable_bus(self, passenger_number):
-        return -(-passenger_number // self.seats)
+        return (passenger_number // self.seats)
 
     def total_cost(self, passenger_number, distance, fuel_price):
         buses = self.driveable_bus(passenger_number)
@@ -80,6 +79,7 @@ class Truck(Car):
         return min(trips_without_trailer, trips_with_trailer)
 
 
+
 if __name__ == "__main__":
     driver1 = Driver("Jonas Pajudaitis", "E", "2025-06-01", "2025-06-15", 0.5)
     print("Can Driver work?", driver1.can_work())
@@ -95,3 +95,12 @@ if __name__ == "__main__":
     truck1 = Truck('Scania',"TRK-567", "Diesel", 1000, "2025-09-10", "2025-10-01", 30, driver1, 12, True, 5)
     print(f"{truck1.make} - {truck1.license_plate} Does need MOT or insurance?", truck1.need_mot_check_or_insurance())
     print("Trucks needed:", truck1.driveable_truck(30))
+# weight = 110
+# truck_weight = 20
+# tent_weight = 10
+#
+# total_races = ceil(weight / (truck_weight + tent_weight))
+# rest_weight = weight - total_races * (truck_weight + tent_weight)
+# tent_needed = ceil(rest_weight / tent_weight)
+#
+# print(total_races, tent_needed)
