@@ -22,7 +22,7 @@ class Driver:
 
     def can_drive_truck(self):
         return self.license_category == "E"
-
+# pats tu labas
 
 class Car:
     def __init__(self,make, license_plate, fuel_type, vehicle_expenses, mot_check_date, insurance_date,
