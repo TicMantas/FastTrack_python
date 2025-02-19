@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-# Labas
+# Labas Vakras
 
 class Driver:
     def __init__(self, name, license_category, holiday_start, holiday_end, price_km):
