@@ -80,7 +80,7 @@ class Game:
             self.tank.move_tank(move)
 
 
-# Run the game
+
 if __name__ == "__main__":
     game = Game()
     game.play()
